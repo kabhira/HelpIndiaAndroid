@@ -1,0 +1,85 @@
+<resources>
+    <string name="app_name">HelpIndia</string>
+    <string name="action_settings">Settings</string>
+    <string name="need_help_text">I need medical help</string>
+    <string name="need_help_desc">Press in case if you want the medical help to reach to your location</string>
+    <string name="to_help_text">I want to help</string>
+    <string name="to_help_desc">Press if you want to offer help to someone hit in disaster.</string>
+    <string name="track" />
+    <string name="track_request_text">Track my request</string>
+    <string name="track_help_desc">Press if you want to track the help request raised or offered by you.</string>
+    <string name="title_activity_new_request">NewRequestActivity</string>
+    <string name="title_activity_test">Test</string>
+    <string name="title_activity_home_page">HomePage</string>
+    <string name="title_activity_request_catagory">RequestCatagory</string>
+    <string name="title_activity_track_my_request">TrackMyRequest</string>
+    <string name="cell_track_request_label">You would be attended in</string>
+    <string name="cell_track_request_time">00 : 00 : 00</string>
+    <string name="cell_track_request_profile_title">Profile of Volunteer</string>
+
+    <!-- Network Layout -->
+    <string name="connection_ckeck_test">Check youy connection and try again.</string>
+    <string name="connection_check_button">Retry</string>
+    <string name="network_error_string">Service Error</string>
+
+    <!-- HelpRequestView -->
+    <string name="title_activity_new_request_view">NewRequestView</string>
+    <string name="new_request_location_title">Your Location</string>
+    <string name="new_request_location_desc">Click to change your location</string>
+    <string name="new_request_duration_title">How urgently you need it</string>
+    <string-array name="new_request_duration_desc">
+        <item>ASAP</item>
+        <item>Today</item>
+        <item>Tomorrow</item>
+        <item>In 2 days</item>
+        <item>In 4 days</item>
+    </string-array>
+    <string name="new_request_problem_title">Detail of your condition</string>
+    <string name="new_request_problem_other_title">Explain shortly about your ailment - 15 words</string>
+    <string name="new_request_problem_desc">Your Problem</string>
+    <string name="new_request_action">Get it now</string>
+
+    <!-- ContactDetailView -->
+    <string name="title_activity_contact_detail_view">ContactDetailView</string>
+    <string name="contact_detail_view_phno_optional_text">Phone Number(Optional)</string>
+    <string name="contact_detail_view_phno_text">Phone Number</string>
+    <string name="contact_detail_view_phno_subText">On which you receive call from our volunteer</string>
+    <string name="contact_detail_action_seeker_string">Post your Request</string>
+    <string name="contact_detail_action_volunteer_string">Volunteer now</string>
+    <string name="contact_detail_phone_required_error_string">Required</string>
+    <string name="contact_detail_phone_error_string">Cannot be less than 10 digit</string>
+
+    <!-- HelpRequestResultView -->
+    <string name="title_activity_new_request_result_view">NewRequestResultView</string>
+    <string name="new_request_result_title">Do not worry!</string>
+    <string name="new_request_result_message">You would soon receive an SMS with detail of volunteer who would attend your request.</string>
+    <string name="new_request_result_action">OK</string>
+
+    <!-- Alert Dialog -->
+    <string name="alert_dialog_positive_text">OK</string>
+
+    <!-- RegistrationView -->
+    <string name="title_activity_registration_view">RegistrationView</string>
+    <string name="registration_view_string_loc_title">Your Location</string>
+    <string name="registration_view_string_loc_desc">Click To Change The Location</string>
+    <string name="registration_view_string_prof_title">You are a</string>
+    <string name="registration_view_string_prof_desc">Select Profession</string>
+    <string name="registration_view_string_day_title">The day you are available on</string>
+    <string name="registration_view_string_day_desc">Select Days</string>
+    <string name="registration_view_string_time_title">Timings you are available on</string>
+    <string name="registration_view_string_time_desc">Select Timings</string>
+    <string name="registration_view_string_action">Help the needy now</string>
+
+    <!-- VolunteerRegistrationConfirmationView -->
+    <string name="title_activity_volunteer_registration_confirmation_view">
+        VolunteerRegistrationConfirmationView
+    </string>
+    <string name="volunteer_registration_confirmation_title">Thank you for volunteering</string>
+    <string name="volunteer_registration_confirmation_message">Scroll down to see the request victims have made.</string>
+    <string name="volunteer_registration_confirmation_action">OK</string>
+
+    <!-- VolunteerActionView -->
+    <string name="title_activity_volunteer_action_view">VolunteerActionView</string>
+    <string name="volunteer_action_string_reject">Reject</string>
+    <string name="volunteer_action_string_accept">Accept</string>
+</resources>
