@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Created by AB335009 on 12/23/2015.
  */
-public class TrackRequestArray {
+public class TrackRequestArray extends ServerBaseResponse {
 
     private ArrayList<TrackRequetElement> data;
 

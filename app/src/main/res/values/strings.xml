@@ -12,28 +12,27 @@
     <string name="title_activity_test">Test</string>
     <string name="title_activity_home_page">HomePage</string>
     <string name="title_activity_request_catagory">RequestCatagory</string>
+
+    <!-- TrackMyRequest  -->
     <string name="title_activity_track_my_request">TrackMyRequest</string>
-    <string name="cell_track_request_label">You would be attended in</string>
+    <string name="cell_track_request_label">You would be attended </string>
     <string name="cell_track_request_time">00 : 00 : 00</string>
     <string name="cell_track_request_profile_title">Profile of Volunteer</string>
+    <string name="cell_track_request_awaited_heading">Response Awaited</string>
+    <string name="cell_track_request_awaited_text">We are finding the right volunteer to attend your condition. You would hear from us soon.</string>
 
     <!-- Network Layout -->
     <string name="connection_ckeck_test">Check youy connection and try again.</string>
     <string name="connection_check_button">Retry</string>
-    <string name="network_error_string">Service Error</string>
+    <string name="network_error_string">Connection Error</string>
+    <string name="network_response_error_string">Server returned failed status.</string>
 
     <!-- HelpRequestView -->
     <string name="title_activity_new_request_view">NewRequestView</string>
     <string name="new_request_location_title">Your Location</string>
     <string name="new_request_location_desc">Click to change your location</string>
     <string name="new_request_duration_title">How urgently you need it</string>
-    <string-array name="new_request_duration_desc">
-        <item>ASAP</item>
-        <item>Today</item>
-        <item>Tomorrow</item>
-        <item>In 2 days</item>
-        <item>In 4 days</item>
-    </string-array>
+    <string name="new_request_duration_desc">ASAP</string>
     <string name="new_request_problem_title">Detail of your condition</string>
     <string name="new_request_problem_other_title">Explain shortly about your ailment - 15 words</string>
     <string name="new_request_problem_desc">Your Problem</string>
@@ -41,6 +40,8 @@
 
     <!-- ContactDetailView -->
     <string name="title_activity_contact_detail_view">ContactDetailView</string>
+    <string name="contact_detail_name_string">Your Name</string>
+    <string name="contact_detail_age_string">Your Age</string>
     <string name="contact_detail_view_phno_optional_text">Phone Number(Optional)</string>
     <string name="contact_detail_view_phno_text">Phone Number</string>
     <string name="contact_detail_view_phno_subText">On which you receive call from our volunteer</string>
@@ -68,7 +69,11 @@
     <string name="registration_view_string_day_desc">Select Days</string>
     <string name="registration_view_string_time_title">Timings you are available on</string>
     <string name="registration_view_string_time_desc">Select Timings</string>
-    <string name="registration_view_string_action">Help the needy now</string>
+    <string name="registration_view_string_action">Proceed</string>
+    <string name="already_registered_title_string">You are already registered as volunteer with mobile </string>
+    <string name="already_registered_edit_profile_string">Edit Profile</string>
+    <string name="already_registered_create_volunteer_string">New Volunteer</string>
+    <string name="already_registered_action_string">Help now</string>
 
     <!-- VolunteerRegistrationConfirmationView -->
     <string name="title_activity_volunteer_registration_confirmation_view">
@@ -82,4 +87,11 @@
     <string name="title_activity_volunteer_action_view">VolunteerActionView</string>
     <string name="volunteer_action_string_reject">Reject</string>
     <string name="volunteer_action_string_accept">Accept</string>
+    <string name="title_activity_help_india_welcome">HelpIndiaWelcome</string>
+
+    <!-- TrackMyRequestContactView -->
+    <string name="title_activity_track_my_request_contact_view">TrackMyRequestContactView</string>
+    <string name="track_my_request_contact_label_string">Track your request with registered phone?</string>
+    <string name="track_my_request_contact_button_string">OK</string>
+    <string name="title_activity_victim_location_view">VictimLocationView</string>
 </resources>

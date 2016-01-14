@@ -11,6 +11,7 @@ import com.wiprohelp.helpindia.R;
 import com.wiprohelp.helpindia.Requests.TrackRequestOperation;
 import com.wiprohelp.helpindia.model.TrackRequestArray;
 import com.wiprohelp.helpindia.model.TrackRequetElement;
+import com.wiprohelp.helpindia.utilities.Constants;
 import com.wiprohelp.helpindia.utilities.NetworkCheckBaseActivity;
 
 import java.util.ArrayList;
@@ -39,7 +40,8 @@ public class TrackMyRequestView extends NetworkCheckBaseActivity {
     @Override
     protected void sendRequestToServer(){
         super.sendRequestToServer();
-        TrackRequestOperation trackRequestOperation = new TrackRequestOperation();
+        String victimMobile = getIntent().getExtras().getString(Constants.TRACK_REQUEST_MOBILE);
+        TrackRequestOperation trackRequestOperation = new TrackRequestOperation(victimMobile);
         VolleyNetwork.getInstance(this.getApplicationContext()).addToRequestQueue(trackRequestOperation);
     }
 

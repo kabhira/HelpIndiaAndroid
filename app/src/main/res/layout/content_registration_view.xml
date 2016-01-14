@@ -12,141 +12,206 @@
     tools:context="com.wiprohelp.helpindia.view.RegistrationView"
     tools:showIn="@layout/activity_registration_view">
 
-    <LinearLayout
-        android:id="@+id/registration_location_layout"
-        android:orientation="vertical"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/registration_location_layout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/registration_view_string_loc_title"
+                android:gravity="center_horizontal"
+                android:textSize="@dimen/font_size_small"
+                android:padding="5dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/registration_view_string_loc_desc"
+                android:id="@+id/registration_location_button"
+                android:background="@android:color/transparent"
+                android:textSize="@dimen/font_size_large"
+                android:padding="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:orientation="vertical"
+            android:id="@+id/separator1"
+            android:focusable="true"
+            android:background="@android:color/darker_gray"
+            android:layout_below="@+id/registration_location_layout"
+            android:layout_margin="@dimen/wall_margin" />
+
+        <LinearLayout
+            android:id="@+id/registration_profession_layout"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/registration_view_string_loc_title"
-            android:gravity="center_horizontal"
-            android:textSize="@dimen/font_size_small"
-            android:padding="5dp" />
+            android:layout_below="@+id/separator1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/registration_view_string_prof_title"
+                android:gravity="center_horizontal"
+                android:textSize="@dimen/font_size_small"
+                android:padding="5dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/registration_view_string_prof_desc"
+                android:id="@+id/registration_profession_button"
+                android:background="@android:color/transparent"
+                android:textSize="@dimen/font_size_large"
+                android:padding="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:orientation="vertical"
+            android:id="@+id/separator2"
+            android:focusable="true"
+            android:background="@android:color/darker_gray"
+            android:layout_below="@+id/registration_profession_layout"
+            android:layout_margin="@dimen/wall_margin" />
+
+        <LinearLayout
+            android:id="@+id/registration_day_layout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/separator2">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/registration_view_string_day_title"
+                android:gravity="center_horizontal"
+                android:textSize="@dimen/font_size_small"
+                android:padding="5dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/registration_view_string_day_desc"
+                android:id="@+id/registration_day_button"
+                android:background="@android:color/transparent"
+                android:textSize="@dimen/font_size_large"
+                android:padding="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:orientation="vertical"
+            android:id="@+id/separator3"
+            android:focusable="true"
+            android:background="@android:color/darker_gray"
+            android:layout_below="@+id/registration_day_layout"
+            android:layout_margin="@dimen/wall_margin" />
+
+        <LinearLayout
+            android:id="@+id/registration_timming_layout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/separator3">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/registration_view_string_time_title"
+                android:gravity="center_horizontal"
+                android:textSize="@dimen/font_size_small"
+                android:padding="5dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/registration_view_string_time_desc"
+                android:id="@+id/registration_timming_button"
+                android:background="@android:color/transparent"
+                android:textSize="@dimen/font_size_large"
+                android:padding="10dp" />
+        </LinearLayout>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/registration_view_string_loc_desc"
-            android:id="@+id/registration_location_button"
-            android:background="@android:color/transparent"
-            android:textSize="@dimen/font_size_large"
-            android:padding="10dp" />
-    </LinearLayout>
-
-    <LinearLayout
+            android:text="@string/registration_view_string_action"
+            android:id="@+id/registration_action_button"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/font_size_large" />
+    </RelativeLayout>
+    <com.wiprohelp.helpindia.utilities.TouchDisabledLayout
+        android:id="@+id/already_registered_layout"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:orientation="vertical"
-        android:id="@+id/separator1"
-        android:focusable="true"
-        android:background="@android:color/darker_gray"
-        android:layout_below="@+id/registration_location_layout"
-        android:layout_margin="@dimen/wall_margin" />
-
-    <LinearLayout
-        android:id="@+id/registration_profession_layout"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/separator1">
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:clickable="false"
+        android:visibility="visible">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/registration_view_string_prof_title"
+            android:text="New Text"
+            android:id="@+id/already_registered_layout_textView"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
             android:gravity="center_horizontal"
-            android:textSize="@dimen/font_size_small"
-            android:padding="5dp" />
+            android:padding="@dimen/padding_heading_title"
+            android:textSize="@dimen/font_size_large" />
 
+        <!-- Remove this button if Edit Volunteer is not implemented.  -->
         <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/already_registered_edit_profile_string"
+            android:id="@+id/already_registered_edit_profile"
+            android:layout_below="@+id/already_registered_layout_textView"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"/>
+
+        <include layout="@layout/network_check_layout"
+            android:id="@+id/connection_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/registration_view_string_prof_desc"
-            android:id="@+id/registration_profession_button"
-            android:background="@android:color/transparent"
-            android:textSize="@dimen/font_size_large"
-            android:padding="10dp" />
-    </LinearLayout>
+            android:layout_below="@+id/already_registered_edit_profile"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:orientation="vertical"
-        android:id="@+id/separator2"
-        android:focusable="true"
-        android:background="@android:color/darker_gray"
-        android:layout_below="@+id/registration_profession_layout"
-        android:layout_margin="@dimen/wall_margin" />
-
-    <LinearLayout
-        android:id="@+id/registration_day_layout"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/separator2">
-
-        <TextView
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/registration_view_string_day_title"
-            android:gravity="center_horizontal"
-            android:textSize="@dimen/font_size_small"
-            android:padding="5dp" />
+            android:layout_alignParentBottom="true">
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/registration_view_string_day_desc"
-            android:id="@+id/registration_day_button"
-            android:background="@android:color/transparent"
-            android:textSize="@dimen/font_size_large"
-            android:padding="10dp" />
-    </LinearLayout>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/already_registered_create_volunteer_string"
+                android:id="@+id/already_registered_new_volunteer"
+                android:layout_weight="1" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:orientation="vertical"
-        android:id="@+id/separator3"
-        android:focusable="true"
-        android:background="@android:color/darker_gray"
-        android:layout_below="@+id/registration_day_layout"
-        android:layout_margin="@dimen/wall_margin" />
-
-    <LinearLayout
-        android:id="@+id/registration_timming_layout"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/separator3">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/registration_view_string_time_title"
-            android:gravity="center_horizontal"
-            android:textSize="@dimen/font_size_small"
-            android:padding="5dp" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/registration_view_string_time_desc"
-            android:id="@+id/registration_timming_button"
-            android:background="@android:color/transparent"
-            android:textSize="@dimen/font_size_large"
-            android:padding="10dp" />
-    </LinearLayout>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/registration_view_string_action"
-        android:id="@+id/registration_action_button"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:textSize="@dimen/font_size_large" />
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/already_registered_action_string"
+                android:id="@+id/already_registered_action_button"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </com.wiprohelp.helpindia.utilities.TouchDisabledLayout>
 </RelativeLayout>

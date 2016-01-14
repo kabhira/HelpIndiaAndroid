@@ -19,6 +19,7 @@ public class SelectOptionAlert {
     private ArrayList<SelectOptionData> mSelectedItems;
     private Context mContext;
     private MultiSelectListener multiSelectListener;
+    private SingleSelectListener singleSelectListener;
     private View multiSelectActionView;
 
     public SelectOptionAlert(ArrayList<SelectOptionData> data, Context context){
@@ -31,15 +32,17 @@ public class SelectOptionAlert {
         }
     }
 
-    public AlertDialog ceateSingleChoiceOption(String title){
+    public AlertDialog ceateSingleChoiceOption(){
         AlertDialog.Builder builder;
         builder = new AlertDialog.Builder(mContext);
-        builder.setTitle(title)
-                .setItems(itemsToShow.toArray(new CharSequence[itemsToShow.size()]), new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        // The 'which' argument contains the index position of the selected item
-                    }
-                });
+        builder.setItems(itemsToShow.toArray(new CharSequence[itemsToShow.size()]), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                // The 'which' argument contains the index position of the selected item
+                if(singleSelectListener != null){
+                    singleSelectListener.onSingleSelect(itemsToShow.get(which));
+                }
+            }
+        });
         return builder.create();
     }
 
@@ -76,7 +79,7 @@ public class SelectOptionAlert {
     }
 
     public static class SelectOptionData{
-        public String optionName;
+        String optionName;
         public SelectOptionData(String optionName){
             this.optionName = optionName;
         }
@@ -89,5 +92,13 @@ public class SelectOptionAlert {
     public void setMultiSelectListener(MultiSelectListener multiSelectListener, View view) {
         this.multiSelectListener = multiSelectListener;
         this.multiSelectActionView = view;
+    }
+
+    public interface SingleSelectListener{
+        void onSingleSelect(String selectedItem);
+    }
+
+    public void setSingleSelectListener(SingleSelectListener singleSelectListener) {
+        this.singleSelectListener = singleSelectListener;
     }
 }

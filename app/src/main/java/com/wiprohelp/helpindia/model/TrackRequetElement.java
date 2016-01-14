@@ -5,17 +5,55 @@ package com.wiprohelp.helpindia.model;
  */
 public class TrackRequetElement {
 
-    private String category;
+    private String requestId;
+    private String categoryDesc;
+    private String categoryId;
+    private String categoryImage;
+    private String requestStatus;
     private String volunteerName;
-    private String mobile;
-    private String volunteerImage;
+    private String requestAcceptedDate;
+    private String volunteerExpectedTime;
+    private String volunteerSpeciality;
+    private String volenteerMobileNumber;
 
-    public String getCategory() {
-        return category;
+    public String getRequestId() {
+        return requestId;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
+
+    public String getCategoryDesc() {
+        return categoryDesc;
+    }
+
+    public void setCategoryDesc(String categoryDesc) {
+        this.categoryDesc = categoryDesc;
+    }
+
+    public String getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(String categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public String getCategoryImage() {
+        return categoryImage;
+    }
+
+    public void setCategoryImage(String categoryImage) {
+        this.categoryImage = categoryImage;
+    }
+
+    public String getRequestStatus() {
+        return requestStatus;
+    }
+
+    public void setRequestStatus(String requestStatus) {
+        this.requestStatus = requestStatus;
     }
 
     public String getVolunteerName() {
@@ -26,19 +64,35 @@ public class TrackRequetElement {
         this.volunteerName = volunteerName;
     }
 
-    public String getMobile() {
-        return mobile;
+    public String getRequestAcceptedDate() {
+        return requestAcceptedDate;
     }
 
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
+    public void setRequestAcceptedDate(String requestAcceptedDate) {
+        this.requestAcceptedDate = requestAcceptedDate;
     }
 
-    public String getVolunteerImage() {
-        return volunteerImage;
+    public String getVolunteerExpectedTime() {
+        return volunteerExpectedTime;
     }
 
-    public void setVolunteerImage(String volunteerImage) {
-        this.volunteerImage = volunteerImage;
+    public void setVolunteerExpectedTime(String volunteerExpectedTime) {
+        this.volunteerExpectedTime = volunteerExpectedTime;
+    }
+
+    public String getVolunteerSpeciality() {
+        return volunteerSpeciality;
+    }
+
+    public void setVolunteerSpeciality(String volunteerSpeciality) {
+        this.volunteerSpeciality = volunteerSpeciality;
+    }
+
+    public String getVolenteerMobileNumber() {
+        return volenteerMobileNumber;
+    }
+
+    public void setVolenteerMobileNumber(String volenteerMobileNumber) {
+        this.volenteerMobileNumber = volenteerMobileNumber;
     }
 }

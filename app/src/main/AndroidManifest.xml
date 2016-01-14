@@ -6,7 +6,12 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!-- [START gcm_permission] -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
+    <!-- [END gcm_permission] -->
     <application
         android:name=".utilities.CustomApplication"
         android:allowBackup="true"
@@ -21,13 +26,7 @@
         <activity
             android:name=".view.HomePage"
             android:label="@string/title_activity_home_page"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".view.RequestCategoryView"
             android:label="@string/title_activity_request_catagory"
@@ -39,15 +38,13 @@
         <activity
             android:name=".view.HelpRequestView"
             android:label="@string/title_activity_new_request_view"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".view.ContactDetailView"
             android:label="@string/title_activity_contact_detail_view"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".view.MapsActivity"
-            android:label="@string/title_activity_contact_detail_view"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".view.HelpRequestResultView"
             android:label="@string/title_activity_new_request_result_view"
@@ -63,6 +60,68 @@
         <activity
             android:name=".view.VolunteerActionView"
             android:label="@string/title_activity_volunteer_action_view"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!-- [START gcm_receiver] -->
+        <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="gcm.play.android.samples.com.gcmquickstart" />
+            </intent-filter>
+        </receiver>
+        <!-- [END gcm_receiver] -->
+
+
+        <!-- [START gcm_listener] -->
+        <service
+            android:name=".gcm.MyGcmListenerService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+        <!-- [END gcm_listener] -->
+        <!-- [START instanceId_listener] -->
+        <service
+            android:name=".gcm.MyInstanceIDListenerService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID" />
+            </intent-filter>
+        </service>
+        <!-- [END instanceId_listener] -->
+        <service
+            android:name="gcm.RegistrationIntentService"
+            android:exported="false" />
+
+        <!--
+Server API Key help
+AIzaSyCv10vyE6Vu9bYa1d8K-Dl3thhElsvIk_w
+Sender ID help
+541285265469
+        -->
+
+        <activity
+            android:name=".view.HelpIndiaWelcome"
+            android:label="@string/title_activity_help_india_welcome"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.TrackMyRequestContactView"
+            android:label="@string/title_activity_track_my_request_contact_view"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".view.VictimLocationView"
+            android:label="@string/title_activity_victim_location_view"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

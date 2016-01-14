@@ -6,6 +6,7 @@ import com.wiprohelp.helpindia.Network.VolleyNetwork;
 import com.wiprohelp.helpindia.Requests.RequestCategoryOperation;
 import com.wiprohelp.helpindia.utilities.CustomApplication;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -14,15 +15,13 @@ import java.util.HashMap;
 public class DataManager {
 
     private static  DataManager instance = new DataManager();
-    private HashMap<String, RequestCategoryElement> requestCategoryList;
+    private ArrayList<RequestCategoryElement> requestCategoryList;
+    private HashMap<String, RequestCategoryElement> requestCategoryMap;
 
     private DataManager(){
-        requestCategoryList = new HashMap<String, RequestCategoryElement>();
+        requestCategoryList = new ArrayList<RequestCategoryElement>();
+        requestCategoryMap = new HashMap<String, RequestCategoryElement>();
         EventBusSingleton.instance().register(this);
-
-        // need to load this on start of App.
-        RequestCategoryOperation requestCategoryOperation = new RequestCategoryOperation();
-        VolleyNetwork.getInstance(CustomApplication.getmContext()).addToRequestQueue(requestCategoryOperation);
     }
 
     public static DataManager instance()
@@ -30,15 +29,20 @@ public class DataManager {
         return instance;
     }
 
-    public synchronized HashMap<String, RequestCategoryElement> getRequestCategoryList(){
+    public synchronized HashMap<String, RequestCategoryElement> getRequestCategoryMap(){
+        return requestCategoryMap;
+    }
+
+    public synchronized ArrayList<RequestCategoryElement> getRequestCategoryArray(){
         return requestCategoryList;
     }
 
     @Subscribe
     public void requestCatagoryData(RequestCategoryArray data){
-        requestCategoryList.clear();
+        requestCategoryList = data.getData();
+        requestCategoryMap.clear();
         for (RequestCategoryElement element:data.getData()) {
-            requestCategoryList.put(element.getCatId(), element);
+            requestCategoryMap.put(element.getCategoryId(), element);
         }
     }
 

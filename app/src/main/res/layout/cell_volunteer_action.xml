@@ -29,11 +29,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="New Text"
-                android:id="@+id/cell_volunteer_action_mobile"
-                android:layout_below="@+id/cell_volunteer_action_problem"
+                android:id="@+id/cell_volunteer_action_name"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:textSize="@dimen/font_size_small"
+                android:textSize="@dimen/font_size_medium"
+                android:padding="5dp"
+                android:layout_below="@+id/cell_volunteer_action_problem" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/cell_volunteer_action_mobile"
+                android:layout_below="@+id/cell_volunteer_action_name"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textSize="@dimen/font_size_medium"
                 android:padding="5dp" />
 
             <TextView
@@ -44,7 +55,7 @@
                 android:layout_below="@+id/cell_volunteer_action_mobile"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:textSize="@dimen/font_size_small"
+                android:textSize="@dimen/font_size_medium"
                 android:padding="5dp" />
 
             <TextView
@@ -55,31 +66,17 @@
                 android:layout_below="@+id/cell_volunteer_action_address"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:textSize="@dimen/font_size_small"
+                android:textSize="@dimen/font_size_medium"
                 android:padding="5dp" />
 
-            <LinearLayout
-                android:orientation="horizontal"
+            <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="false"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/cell_volunteer_action_expected_time">
+                android:text="@string/volunteer_action_string_accept"
+                android:id="@+id/cell_volunteer_action_accept"
+                android:layout_weight="1"
+                android:layout_below="@+id/cell_volunteer_action_expected_time" />
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/volunteer_action_string_accept"
-                    android:id="@+id/cell_volunteer_action_accept"
-                    android:layout_weight="1" />
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/volunteer_action_string_reject"
-                    android:id="@+id/cell_volunteer_action_reject"
-                    android:layout_weight="1" />
-            </LinearLayout>
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 </LinearLayout>

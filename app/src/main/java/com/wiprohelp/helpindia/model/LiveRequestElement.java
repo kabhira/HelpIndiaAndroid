@@ -4,67 +4,95 @@ package com.wiprohelp.helpindia.model;
  * Created by ab335009 on 1/6/2016.
  */
 public class LiveRequestElement {
-    private String catagoryId;
-    private String seekerName;
-    private String seekerMobile;
-    private String latitude;
-    private String longitude;
-    private String address;
-    private String expectedTime;
 
-    public String getCatagoryId() {
-        return catagoryId;
+    private String requestId;
+    private String categoryId;
+    private String categoryDesc;
+    private String categoryImage;
+    private String victimName;
+    private String victimPhoneNumber;
+    private String victimAddress;
+    private String victimLatitude;
+    private String victimLongitude;
+    private String victimExpectedTime;
+
+    public String getRequestId() {
+        return requestId;
     }
 
-    public void setCatagoryId(String catagoryId) {
-        this.catagoryId = catagoryId;
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
     }
 
-    public String getSeekerName() {
-        return seekerName;
+    public String getCategoryId() {
+        return categoryId;
     }
 
-    public void setSeekerName(String seekerName) {
-        this.seekerName = seekerName;
+    public void setCategoryId(String categoryId) {
+        this.categoryId = categoryId;
     }
 
-    public String getSeekerMobile() {
-        return seekerMobile;
+    public String getCategoryDesc() {
+        return categoryDesc;
     }
 
-    public void setSeekerMobile(String seekerMobile) {
-        this.seekerMobile = seekerMobile;
+    public void setCategoryDesc(String categoryDesc) {
+        this.categoryDesc = categoryDesc;
     }
 
-    public String getLatitude() {
-        return latitude;
+    public String getCategoryImage() {
+        return categoryImage;
     }
 
-    public void setLatitude(String latitude) {
-        this.latitude = latitude;
+    public void setCategoryImage(String categoryImage) {
+        this.categoryImage = categoryImage;
     }
 
-    public String getLongitude() {
-        return longitude;
+    public String getVictimName() {
+        return victimName;
     }
 
-    public void setLongitude(String longitude) {
-        this.longitude = longitude;
+    public void setVictimName(String victimName) {
+        this.victimName = victimName;
     }
 
-    public String getAddress() {
-        return address;
+    public String getVictimPhoneNumber() {
+        return victimPhoneNumber;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setVictimPhoneNumber(String victimPhoneNumber) {
+        this.victimPhoneNumber = victimPhoneNumber;
     }
 
-    public String getExpectedTime() {
-        return expectedTime;
+    public String getVictimAddress() {
+        return victimAddress;
     }
 
-    public void setExpectedTime(String expectedTime) {
-        this.expectedTime = expectedTime;
+    public void setVictimAddress(String victimAddress) {
+        this.victimAddress = victimAddress;
+    }
+
+    public String getVictimLatitude() {
+        return victimLatitude;
+    }
+
+    public void setVictimLatitude(String victimLatitude) {
+        this.victimLatitude = victimLatitude;
+    }
+
+    public String getVictimLongitude() {
+        return victimLongitude;
+    }
+
+    public void setVictimLongitude(String victimLongitude) {
+        this.victimLongitude = victimLongitude;
+    }
+
+    public String getVictimExpectedTime() {
+        return victimExpectedTime;
+    }
+
+    public void setVictimExpectedTime(String victimExpectedTime) {
+        this.victimExpectedTime = victimExpectedTime;
     }
 }

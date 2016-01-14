@@ -17,7 +17,6 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
         setContentView(R.layout.activity_home_page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        DataManager.instance();
 
         findViewById(R.id.need_help_id).setOnClickListener(this);
         findViewById(R.id.to_help_id).setOnClickListener(this);
@@ -36,7 +35,7 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
                 startActivity(intent2);
                 break;
             case R.id.track_request_id:
-                Intent intent3 = new Intent(this, TrackMyRequestView.class);
+                Intent intent3 = new Intent(this, TrackMyRequestContactView.class);
                 startActivity(intent3);
                 break;
         }

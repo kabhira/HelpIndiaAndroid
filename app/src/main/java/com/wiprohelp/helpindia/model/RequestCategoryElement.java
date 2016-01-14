@@ -1,34 +1,36 @@
 package com.wiprohelp.helpindia.model;
 
+import com.wiprohelp.helpindia.utilities.Constants;
+
 /**
  * Created by AB335009 on 12/18/2015.
  */
 public class RequestCategoryElement {
-    private String catId;
-    private String catName;
-    private String image;
+    private String categoryId;
+    private String categoryName;
+    private String categoryIMg;
 
-    public String getCatId() {
-        return catId;
+    public String getCategoryId() {
+        return categoryId;
     }
 
-    public void setCatId(String catId) {
-        this.catId = catId;
+    public void setCategoryId(String categoryId) {
+        this.categoryId = categoryId;
     }
 
-    public String getCatName() {
-        return catName;
+    public String getCategoryName() {
+        return categoryName;
     }
 
-    public void setCatName(String catName) {
-        this.catName = catName;
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 
-    public String getImage() {
-        return image;
+    public String getCategoryIMg() {
+        return Constants.BASE_URL+categoryIMg;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setCategoryIMg(String categoryIMg) {
+        this.categoryIMg = categoryIMg;
     }
 }

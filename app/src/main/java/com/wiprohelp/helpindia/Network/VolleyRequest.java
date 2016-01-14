@@ -18,6 +18,9 @@ import com.wiprohelp.helpindia.events.ConnectionSuccessfulEvent;
 import com.wiprohelp.helpindia.events.DataVolleyError;
 import com.wiprohelp.helpindia.events.EventBusSingleton;
 import com.wiprohelp.helpindia.events.NoInternetConnectionEvent;
+import com.wiprohelp.helpindia.events.ResponseStatusFailedEvent;
+import com.wiprohelp.helpindia.model.ServerBaseResponse;
+import com.wiprohelp.helpindia.utilities.Constants;
 import com.wiprohelp.helpindia.utilities.CustomApplication;
 
 import java.io.UnsupportedEncodingException;
@@ -41,7 +44,7 @@ public class VolleyRequest<T> extends Request<T>
      */
     public VolleyRequest(int requestType, String url, Class<T> clazz, Map<String, String> headers, Map<String, String> params, String jsonRequest)
     {
-        super(requestType, url, new DataVolleyError());
+        super(requestType, Constants.BASE_URL+url, new DataVolleyError());
         this.clazz = clazz;
         this.headers = headers;
         this.params = params;
@@ -73,8 +76,15 @@ public class VolleyRequest<T> extends Request<T>
 
     @Override
     protected void deliverResponse(T response){
-        EventBusSingleton.instance().postEvent(response);
-        EventBusSingleton.instance().postEvent(new ConnectionSuccessfulEvent());
+        // All the server response object should be subclass of ServerBaseResponse (it contains server status).
+        ServerBaseResponse serverBaseResponse = (ServerBaseResponse) response;
+        if(serverBaseResponse.getStatus().equalsIgnoreCase(Constants.SERVER_STATUS_SUCCESS)){
+            EventBusSingleton.instance().postEvent(response);
+            EventBusSingleton.instance().postEvent(new ConnectionSuccessfulEvent());
+        }
+        else{
+            EventBusSingleton.instance().postEvent(new ResponseStatusFailedEvent());
+        }
     }
 
     @Override

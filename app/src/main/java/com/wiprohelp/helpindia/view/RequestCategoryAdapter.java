@@ -40,7 +40,7 @@ public class RequestCategoryAdapter extends RecyclerView.Adapter<RequestCategory
         @Override
         public void onClick(View v) {
             Intent intent = new Intent(mActivity, HelpRequestView.class);
-            intent.putExtra(Constants.REQUEST_CONTACTID, mDataset.get(getAdapterPosition()).getCatId());
+            intent.putExtra(Constants.REQUEST_CONTACTID, mDataset.get(getAdapterPosition()).getCategoryId());
             mActivity.startActivity(intent);
         }
     }
@@ -62,9 +62,9 @@ public class RequestCategoryAdapter extends RecyclerView.Adapter<RequestCategory
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.mTextView.setText(mDataset.get(position).getCatName());
+        holder.mTextView.setText(mDataset.get(position).getCategoryName());
         ImageLoader imageLoader = VolleyNetwork.getInstance(mActivity).getImageLoader();
-        holder.mImageView.setImageUrl(mDataset.get(position).getImage(), imageLoader);
+        holder.mImageView.setImageUrl(mDataset.get(position).getCategoryIMg(), imageLoader);
     }
 
     // Return the size of your dataset (invoked by the layout manager)

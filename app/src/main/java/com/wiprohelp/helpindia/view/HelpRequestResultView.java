@@ -27,6 +27,7 @@ public class HelpRequestResultView extends AppCompatActivity implements View.OnC
         switch (v.getId()){
             case R.id.new_request_result_action:
                 Intent intent = new Intent(this, HomePage.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
                 break;
         }

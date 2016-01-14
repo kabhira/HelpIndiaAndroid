@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.wiprohelp.helpindia.view.VictimLocationView"
+    tools:showIn="@layout/activity_victim_location_view">
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/victim_location_mapview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/victim_location_contact_layout" />
+
+        <LinearLayout
+            android:id="@+id/victim_location_contact_layout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/victim_location_name"
+                android:padding="@dimen/form_element_padding"
+                android:textSize="@dimen/font_size_large" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/victim_location_mobile"
+                android:textSize="@dimen/font_size_large"
+                android:padding="@dimen/form_element_padding" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/victim_location_address"
+                android:padding="@dimen/form_element_padding"
+                android:textSize="@dimen/font_size_small" />
+        </LinearLayout>
+</RelativeLayout>

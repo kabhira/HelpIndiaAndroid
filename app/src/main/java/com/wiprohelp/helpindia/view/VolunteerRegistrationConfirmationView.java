@@ -29,6 +29,7 @@ public class VolunteerRegistrationConfirmationView extends AppCompatActivity imp
         switch (v.getId()){
             case R.id.volunteer_registration_confirmation_action:
                 Intent intent = new Intent(this, VolunteerActionView.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
                 break;
         }

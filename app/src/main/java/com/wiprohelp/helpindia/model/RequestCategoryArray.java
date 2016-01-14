@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Created by AB335009 on 12/18/2015.
  */
-public class RequestCategoryArray {
+public class RequestCategoryArray extends ServerBaseResponse {
     private ArrayList<RequestCategoryElement> data;
 
     public ArrayList<RequestCategoryElement> getData() {

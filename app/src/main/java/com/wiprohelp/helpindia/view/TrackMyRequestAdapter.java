@@ -6,6 +6,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
@@ -31,13 +33,23 @@ public class TrackMyRequestAdapter extends RecyclerView.Adapter<TrackMyRequestAd
         public TextView mRequestCategory;
         public NetworkImageView mRequestCategoryImage;
         public TextView mVolunteerName;
+        public TextView mVolunteerSpeciality;
         public TextView mVolunteerMobile;
+        public TextView mVolunteerTime;
+        public RelativeLayout middleBar;
+        public RelativeLayout lowerBar;
+        public LinearLayout responseAwaitedLayout;
         public ViewHolder(View v) {
             super(v);
             mRequestCategory = (TextView) v.findViewById(R.id.cell_track_request_cat_name);
             mRequestCategoryImage = (NetworkImageView) v.findViewById(R.id.cell_track_request_cat_image);
             mVolunteerName = (TextView) v.findViewById(R.id.cell_track_request_volunteer_name);
+            mVolunteerSpeciality = (TextView) v.findViewById(R.id.cell_track_request_volunteer_speciality);
             mVolunteerMobile = (TextView) v.findViewById(R.id.cell_track_request_volunteer_mobile);
+            mVolunteerTime = (TextView) v.findViewById(R.id.cell_track_request_volunteer_time);
+            middleBar = (RelativeLayout) v.findViewById(R.id.middle_bar);
+            lowerBar = (RelativeLayout) v.findViewById(R.id.lower_bar);
+            responseAwaitedLayout = (LinearLayout) v.findViewById(R.id.response_awaited_layout);
             v.setOnClickListener(this);
         }
 
@@ -67,17 +79,36 @@ public class TrackMyRequestAdapter extends RecyclerView.Adapter<TrackMyRequestAd
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         ImageLoader imageLoader = VolleyNetwork.getInstance(mActivity).getImageLoader();
-        HashMap<String, RequestCategoryElement> categoryMap = DataManager.instance().getRequestCategoryList();
-        RequestCategoryElement categoryElement = categoryMap.get(mDataset.get(position).getCategory());
-        holder.mRequestCategory.setText(categoryElement.getCatName());
-        holder.mRequestCategoryImage.setImageUrl(categoryElement.getImage(), imageLoader);
+        HashMap<String, RequestCategoryElement> categoryMap = DataManager.instance().getRequestCategoryMap();
+        RequestCategoryElement categoryElement = categoryMap.get(mDataset.get(position).getCategoryId());
+        holder.mRequestCategory.setText(categoryElement.getCategoryName());
+        holder.mRequestCategoryImage.setImageUrl(categoryElement.getCategoryIMg(), imageLoader);
         holder.mVolunteerName.setText(mDataset.get(position).getVolunteerName());
-        holder.mVolunteerMobile.setText(mDataset.get(position).getMobile());
+        holder.mVolunteerSpeciality.setText(mDataset.get(position).getVolunteerSpeciality());
+        holder.mVolunteerMobile.setText(mDataset.get(position).getVolenteerMobileNumber());
+        holder.mVolunteerTime.setText(mDataset.get(position).getVolunteerExpectedTime());
+
+        if(mDataset.get(position).getRequestStatus().equalsIgnoreCase("OPEN"))
+            setOpenLayout(holder);
+        else
+            setAwaitedLayout(holder);
     }
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
         return mDataset.size();
+    }
+
+    private void setOpenLayout(ViewHolder h){
+        h.middleBar.setVisibility(View.GONE);
+        h.lowerBar.setVisibility(View.GONE);
+        h.responseAwaitedLayout.setVisibility(View.VISIBLE);
+    }
+
+    private void setAwaitedLayout(ViewHolder h){
+        h.middleBar.setVisibility(View.VISIBLE);
+        h.lowerBar.setVisibility(View.VISIBLE);
+        h.responseAwaitedLayout.setVisibility(View.GONE);
     }
 }

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Created by ab335009 on 1/6/2016.
  */
-public class LiveRequestArray {
+public class LiveRequestArray extends ServerBaseResponse {
 
     private ArrayList<LiveRequestElement> data;
 

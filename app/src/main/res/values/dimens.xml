@@ -9,4 +9,7 @@
     <dimen name="padding_icon_title">10dp</dimen>
     <dimen name="padding_heading_title">15dp</dimen>
     <dimen name="wall_margin">10dp</dimen>
+    <dimen name="form_element_padding">5dp</dimen>
+    <dimen name="button_padding">10dp</dimen>
+    <dimen name="button_label_padding">5dp</dimen>
 </resources>
