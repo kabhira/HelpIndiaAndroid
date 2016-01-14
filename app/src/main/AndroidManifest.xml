@@ -26,11 +26,19 @@
         <activity
             android:name=".view.HomePage"
             android:label="@string/title_activity_home_page"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".view.RequestCategoryView"
             android:label="@string/title_activity_request_catagory"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" >>
+        </activity>
         <activity
             android:name=".view.TrackMyRequestView"
             android:label="@string/title_activity_track_my_request"
@@ -50,9 +58,14 @@
             android:label="@string/title_activity_new_request_result_view"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name=".view.YourRequests"
+            android:label="YourRequestList"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
             android:name=".view.RegistrationView"
             android:label="@string/title_activity_registration_view"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
         <activity
             android:name=".view.VolunteerRegistrationConfirmationView"
             android:label="@string/title_activity_volunteer_registration_confirmation_view"
@@ -109,11 +122,6 @@ Sender ID help
             android:name=".view.HelpIndiaWelcome"
             android:label="@string/title_activity_help_india_welcome"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".view.TrackMyRequestContactView"

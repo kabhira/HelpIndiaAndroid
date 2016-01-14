@@ -94,4 +94,72 @@
     <string name="track_my_request_contact_label_string">Track your request with registered phone?</string>
     <string name="track_my_request_contact_button_string">OK</string>
     <string name="title_activity_victim_location_view">VictimLocationView</string>
+
+    <!-- Category Drawer List-->
+
+    <string-array name="category_drawer">
+        <item>Home Page</item>
+        <item>Make A New Request</item>
+        <item>Status Of Old Request</item>
+    </string-array>
+    <string-array name="register_drawer">
+        <item>Request You Accepted</item>
+        <item>New Requests</item>
+        <item>Edit Your Profile</item>
+    </string-array>
+    <string name="profile_text">PROFILE OF VICTIM</string>
+    <string name="name_text">Name :- </string>
+    <string name="appointment_text">Appointment :- </string>
+    <string name="phone_text">Phone Number :- </string>
+    <string name="details_text">Details :- </string>
+    <string name="accept_text">Accepted</string>
+    <string-array name="Names">
+        <item>Shikhar</item>
+        <item>Abhiraj</item>
+        <item>Vivek</item>
+        <item>Uday</item>
+        <item>Bala</item>
+        <item>Neel</item>
+        <item>Kiran</item>
+    </string-array>
+
+    <string-array name="appointment_time">
+        <item>00:00:00</item>
+        <item>02:00:00</item>
+        <item>00:30:00</item>
+        <item>00:00:00</item>
+        <item>10:00:00</item>
+        <item>00:00:30</item>
+        <item>00:12:00</item>
+    </string-array>
+
+    <string-array name="phone_number">
+        <item>9971628900</item>
+        <item>9971628901</item>
+        <item>9971628902</item>
+        <item>9971628903</item>
+        <item>9971628904</item>
+        <item>9971628905</item>
+        <item>9971628906</item>
+    </string-array>
+
+    <string-array name="details">
+        <item>OK</item>
+        <item>Not OK</item>
+        <item>In Pain</item>
+        <item>Come Soon</item>
+        <item>Emergency</item>
+        <item>Urgent</item>
+        <item>Will Die</item>
+    </string-array>
+
+    <string-array name="medical_condition">
+        <item>Feeling Depressed</item>
+        <item>Need Medicine</item>
+        <item>Stomach Infection</item>
+        <item>Feeling Dizzy</item>
+        <item>Alergic Reaction</item>
+        <item>Fever</item>
+        <item>Bleeding</item>
+    </string-array>
 </resources>
