@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/network_error_string"
-            android:layout_gravity="center_horizontal" />
+            android:gravity="center" />
 
         <Button
             android:layout_width="wrap_content"

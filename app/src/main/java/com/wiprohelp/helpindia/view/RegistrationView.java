@@ -30,6 +30,7 @@ import com.wiprohelp.helpindia.Requests.LoadVolunteerProfileOperation;
 import com.wiprohelp.helpindia.Requests.TrackRequestOperation;
 import com.wiprohelp.helpindia.model.TrackRequestArray;
 import com.wiprohelp.helpindia.utilities.Constants;
+import com.wiprohelp.helpindia.utilities.CustomAlertDialog;
 import com.wiprohelp.helpindia.utilities.HelpIndiaSharedPref;
 import com.wiprohelp.helpindia.utilities.NetworkCheckBaseActivity;
 import com.wiprohelp.helpindia.utilities.SelectOptionAlert;
@@ -51,6 +52,7 @@ public class RegistrationView extends NetworkCheckBaseActivity implements View.O
     private TextView alreadyRegisteredLayoutTextView;
     private RelativeLayout alreadyRegisteredLayout;
     private String selectedAddress = "";
+    private CustomAlertDialog customAlertDialog;
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;

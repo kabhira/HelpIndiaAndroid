@@ -16,6 +16,7 @@ import com.wiprohelp.helpindia.model.LiveRequestArray;
 import com.wiprohelp.helpindia.model.LiveRequestElement;
 import com.wiprohelp.helpindia.model.ServerResponseElement;
 import com.wiprohelp.helpindia.utilities.Constants;
+import com.wiprohelp.helpindia.utilities.CustomAlertDialog;
 import com.wiprohelp.helpindia.utilities.HelpIndiaSharedPref;
 import com.wiprohelp.helpindia.utilities.NetworkCheckBaseActivity;
 
@@ -50,6 +51,12 @@ public class VolunteerActionView extends NetworkCheckBaseActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        sendRequestToServer();
+    }
+
+    @Override
     protected void sendRequestToServer(){
         super.sendRequestToServer();
         HelpIndiaSharedPref helpIndiaSharedPref = new HelpIndiaSharedPref(this);
@@ -78,8 +85,14 @@ public class VolunteerActionView extends NetworkCheckBaseActivity {
     @Subscribe
     public void liveRequestResponse(LiveRequestArray data){
         mDataset.clear();
-        mDataset.addAll(data.getData());
-        mAdapter.notifyDataSetChanged();
+        if(data.getData().isEmpty()){
+            String msg = getResources().getString(R.string.network_response_empty_array_string);
+            new CustomAlertDialog(this).createAlertDialog("Currently no request is available.");
+        }
+        else {
+            mDataset.addAll(data.getData());
+            mAdapter.notifyDataSetChanged();
+        }
     }
 
     @Subscribe
@@ -92,7 +105,6 @@ public class VolunteerActionView extends NetworkCheckBaseActivity {
         intent.putExtra(Constants.VICTIM_NAME, mLiveRequestElement.getVictimName());
         intent.putExtra(Constants.VICTIM_ADDRESS, mLiveRequestElement.getVictimAddress());
         startActivity(intent);
-        finish();
     }
 
 }

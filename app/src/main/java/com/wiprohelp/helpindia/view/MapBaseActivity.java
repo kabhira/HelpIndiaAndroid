@@ -37,7 +37,7 @@ public class MapBaseActivity extends AppCompatActivity implements OnMapReadyCall
     protected double selectedLatitude;
     protected double selectedLongitude;
     private GoogleMap mMap;
-    public static final long UPDATE_INTERVAL_IN_MILLISECONDS = 10000;
+    public static final long UPDATE_INTERVAL_IN_MILLISECONDS = 100*1000;
     public static final long FASTEST_UPDATE_INTERVAL_IN_MILLISECONDS = UPDATE_INTERVAL_IN_MILLISECONDS / 2;
     private static final int GPS_RESOLUTION_REQUEST_CODE = 100;
     private static String TAG = "MapBaseActivity";

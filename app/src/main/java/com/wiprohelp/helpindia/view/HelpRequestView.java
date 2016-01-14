@@ -18,6 +18,7 @@ import com.google.android.gms.location.places.ui.PlaceAutocomplete;
 import com.wiprohelp.helpindia.R;
 import com.wiprohelp.helpindia.model.DataManager;
 import com.wiprohelp.helpindia.utilities.Constants;
+import com.wiprohelp.helpindia.utilities.CustomAlertDialog;
 import com.wiprohelp.helpindia.utilities.SelectOptionAlert;
 
 import java.util.ArrayList;
@@ -34,7 +35,7 @@ public class HelpRequestView extends MapBaseActivity implements View.OnClickList
     private static String TAG = "HelpRequestView";
     private String selectedAddress;
     private String categoryID;
-
+    private CustomAlertDialog customAlertDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +64,12 @@ public class HelpRequestView extends MapBaseActivity implements View.OnClickList
     }
 
     @Override
+    protected void onStop() {
+        super.onStop();
+        customAlertDialog.dismissProgressDialog();
+    }
+
+    @Override
     public void onSingleSelect(String selectedItem) {
         requestDurationButton.setText(selectedItem);
     }
@@ -71,6 +78,8 @@ public class HelpRequestView extends MapBaseActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.request_action_button:
+                customAlertDialog = new CustomAlertDialog(this);
+                customAlertDialog.createProgressDialog("Please Wait");
                 Intent intent = new Intent(this, ContactDetailView.class);
                 intent.putExtra(Constants.CONTACT_VIEW_MODE, Constants.CONTACT_VIEW_VICTIM);
                 intent.putExtra(Constants.REQUEST_CONTACTID, categoryID);
@@ -83,7 +92,7 @@ public class HelpRequestView extends MapBaseActivity implements View.OnClickList
                 break;
             case R.id.request_location_button: {
                 try {
-                    Intent autocompleteIntent = new PlaceAutocomplete.IntentBuilder(PlaceAutocomplete.MODE_FULLSCREEN).build(this);
+                    Intent autocompleteIntent = new PlaceAutocomplete.IntentBuilder(PlaceAutocomplete.MODE_OVERLAY).build(this);
                     startActivityForResult(autocompleteIntent, PLACE_AUTOCOMPLETE_REQUEST_CODE);
                 } catch (GooglePlayServicesRepairableException e) {
                     Log.e(TAG, e.getMessage());

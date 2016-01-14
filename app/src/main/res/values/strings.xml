@@ -1,4 +1,5 @@
 <resources>
+    <string name="title_activity_help_india_welcome">HelpIndia</string>
     <string name="app_name">HelpIndia</string>
     <string name="action_settings">Settings</string>
     <string name="need_help_text">I need medical help</string>
@@ -22,9 +23,9 @@
     <string name="cell_track_request_awaited_text">We are finding the right volunteer to attend your condition. You would hear from us soon.</string>
 
     <!-- Network Layout -->
-    <string name="connection_ckeck_test">Check youy connection and try again.</string>
+    <string name="connection_ckeck_test">Check your connection and try again.</string>
     <string name="connection_check_button">Retry</string>
-    <string name="network_error_string">Connection Error</string>
+    <string name="network_error_string">Connection Error or Client unable to parse response.</string>
     <string name="network_response_error_string">Server returned failed status.</string>
 
     <!-- HelpRequestView -->
@@ -57,6 +58,8 @@
     <string name="new_request_result_action">OK</string>
 
     <!-- Alert Dialog -->
+    <string name="network_response_empty_array_string">No data exists for this request.</string>
+    <string name="alert_dialog_title_text">Alert!</string>
     <string name="alert_dialog_positive_text">OK</string>
 
     <!-- RegistrationView -->
@@ -87,7 +90,6 @@
     <string name="title_activity_volunteer_action_view">VolunteerActionView</string>
     <string name="volunteer_action_string_reject">Reject</string>
     <string name="volunteer_action_string_accept">Accept</string>
-    <string name="title_activity_help_india_welcome">HelpIndiaWelcome</string>
 
     <!-- TrackMyRequestContactView -->
     <string name="title_activity_track_my_request_contact_view">TrackMyRequestContactView</string>

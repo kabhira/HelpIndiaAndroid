@@ -12,6 +12,7 @@ import com.wiprohelp.helpindia.Requests.TrackRequestOperation;
 import com.wiprohelp.helpindia.model.TrackRequestArray;
 import com.wiprohelp.helpindia.model.TrackRequetElement;
 import com.wiprohelp.helpindia.utilities.Constants;
+import com.wiprohelp.helpindia.utilities.CustomAlertDialog;
 import com.wiprohelp.helpindia.utilities.NetworkCheckBaseActivity;
 
 import java.util.ArrayList;
@@ -48,8 +49,14 @@ public class TrackMyRequestView extends NetworkCheckBaseActivity {
     @Subscribe
     public void serverResponse(TrackRequestArray data){
         mDataset.clear();
-        mDataset.addAll(data.getData());
-        mAdapter.notifyDataSetChanged();
+        if(data.getData().isEmpty()){
+            String msg = getResources().getString(R.string.network_response_empty_array_string);
+            new CustomAlertDialog(this).createAlertDialog("You do not have any pending request.");
+        }
+        else {
+            mDataset.addAll(data.getData());
+            mAdapter.notifyDataSetChanged();
+        }
     }
 
 }

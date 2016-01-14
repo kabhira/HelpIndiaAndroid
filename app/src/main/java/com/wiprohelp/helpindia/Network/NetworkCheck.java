@@ -1,10 +1,6 @@
 package com.wiprohelp.helpindia.Network;
 
 import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -16,7 +12,6 @@ import com.squareup.otto.Subscribe;
 import com.wiprohelp.helpindia.R;
 import com.wiprohelp.helpindia.events.ConnectionStartedEvent;
 import com.wiprohelp.helpindia.events.ConnectionSuccessfulEvent;
-import com.wiprohelp.helpindia.events.DataVolleyError;
 import com.wiprohelp.helpindia.events.EventBusSingleton;
 import com.wiprohelp.helpindia.events.NoInternetConnectionEvent;
 import com.wiprohelp.helpindia.events.ResponseStatusFailedEvent;

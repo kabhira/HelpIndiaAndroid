@@ -69,8 +69,11 @@ public class SelectOptionAlert {
                         if(multiSelectListener != null){
                             String selectedString = "";
                             for (SelectOptionData optionData : mSelectedItems){
-                                selectedString += optionData.optionName + ",";
+                                selectedString += optionData.optionName + ", ";
                             }
+                            int lastIndex = selectedString.lastIndexOf(", ");
+                            if(lastIndex != -1)
+                                selectedString = new StringBuilder(selectedString).replace(lastIndex, lastIndex+1, "").toString();
                             multiSelectListener.onMultiSelectDone(selectedString, multiSelectActionView);
                         }
                     }
