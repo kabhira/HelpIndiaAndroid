@@ -40,7 +40,7 @@ public class CustomAlertDialog {
     }
 
     public void dismissProgressDialog(){
-        if(progress.isShowing())
+        if(progress != null && progress.isShowing())
             progress.dismiss();
     }
 }

@@ -54,6 +54,7 @@ public class HelpRequestView extends MapBaseActivity implements View.OnClickList
         requestLocationButton.setOnClickListener(this);
         requestDurationButton.setOnClickListener(this);
         setMapView(R.id.request_map_view, savedInstanceState);
+        customAlertDialog = new CustomAlertDialog(this);
 
         categoryID = getIntent().getExtras().getString(Constants.REQUEST_CONTACTID);
         if (!categoryID.equals("100")) {
@@ -78,7 +79,6 @@ public class HelpRequestView extends MapBaseActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.request_action_button:
-                customAlertDialog = new CustomAlertDialog(this);
                 customAlertDialog.createProgressDialog("Please Wait");
                 Intent intent = new Intent(this, ContactDetailView.class);
                 intent.putExtra(Constants.CONTACT_VIEW_MODE, Constants.CONTACT_VIEW_VICTIM);
