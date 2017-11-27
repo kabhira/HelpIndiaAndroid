@@ -4,8 +4,6 @@ import com.wiprohelp.helpindia.Network.VolleyRequest;
 import com.wiprohelp.helpindia.model.ServerResponseElement;
 import com.wiprohelp.helpindia.utilities.Constants;
 
-import java.net.URLEncoder;
-
 /**
  * Created by AB335009 on 1/10/2016.
  */

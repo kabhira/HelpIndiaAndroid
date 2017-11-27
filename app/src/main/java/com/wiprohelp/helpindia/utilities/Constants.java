@@ -46,7 +46,7 @@ public class Constants {
     public static String LOAD_VOLUNTEER_PROFILE_URL = "getUserData";
 
 
-    public static String SERVER_STATUS_SUCCESS = "success";
-    public static String SERVER_STATUS_FAILED = "failed";
+        public static String SERVER_STATUS_SUCCESS = "success";
+        public static String SERVER_STATUS_FAILED = "failed";
 
 }

@@ -1,9 +1,5 @@
 package com.wiprohelp.helpindia.Network;
 
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-
 import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;
 import com.android.volley.ParseError;
@@ -13,15 +9,12 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
-import com.wiprohelp.helpindia.events.ConnectionStartedEvent;
 import com.wiprohelp.helpindia.events.ConnectionSuccessfulEvent;
 import com.wiprohelp.helpindia.events.DataVolleyError;
 import com.wiprohelp.helpindia.events.EventBusSingleton;
-import com.wiprohelp.helpindia.events.NoInternetConnectionEvent;
 import com.wiprohelp.helpindia.events.ResponseStatusFailedEvent;
 import com.wiprohelp.helpindia.model.ServerBaseResponse;
 import com.wiprohelp.helpindia.utilities.Constants;
-import com.wiprohelp.helpindia.utilities.CustomApplication;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Map;

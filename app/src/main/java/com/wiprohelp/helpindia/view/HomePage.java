@@ -7,7 +7,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.wiprohelp.helpindia.R;
-import com.wiprohelp.helpindia.model.DataManager;
 
 public class HomePage extends AppCompatActivity implements View.OnClickListener {
 

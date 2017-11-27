@@ -10,25 +10,23 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import org.json.JSONException;
-import org.json.JSONObject;
 import com.squareup.otto.Subscribe;
 import com.wiprohelp.helpindia.Network.VolleyNetwork;
 import com.wiprohelp.helpindia.R;
 import com.wiprohelp.helpindia.Requests.HelpRequestOperation;
 import com.wiprohelp.helpindia.Requests.VolunteerRegistrationOperation;
-import com.wiprohelp.helpindia.events.EventBusSingleton;
-import com.wiprohelp.helpindia.events.ResponseStatusFailedEvent;
 import com.wiprohelp.helpindia.model.ServerResponseElement;
 import com.wiprohelp.helpindia.utilities.Constants;
 import com.wiprohelp.helpindia.utilities.HelpIndiaSharedPref;
 import com.wiprohelp.helpindia.utilities.NetworkCheckBaseActivity;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
@@ -71,13 +69,11 @@ public class ContactDetailView extends NetworkCheckBaseActivity implements View.
         // we are not getting location for volunteer. So by default its LatLng is 0.0/0.0
         try {
             Bundle intentBundle = getIntent().getExtras();
-            mLatitude =  intentBundle.getString(Constants.REGISTRATION_LATITUDE);
-            mLongitude = intentBundle.getString(Constants.REGISTRATION_LONGITUDE);
+            mLatitude =  intentBundle.getString(Constants.REGISTRATION_LATITUDE, "0.0");
+            mLongitude = intentBundle.getString(Constants.REGISTRATION_LONGITUDE, "0.0");
             mAddress = getAddress(Double.parseDouble(mLatitude), Double.parseDouble(mLongitude));
         }
         catch (Exception e){
-            mLatitude = "0.0";
-            mLongitude = "0.0";
             mAddress = "";
         }
     }

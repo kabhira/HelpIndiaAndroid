@@ -3,8 +3,6 @@ package com.wiprohelp.helpindia.utilities;
 import android.app.Application;
 import android.content.Context;
 
-import com.wiprohelp.helpindia.model.DataManager;
-
 /**
  * Created by AB335009 on 12/23/2015.
  */

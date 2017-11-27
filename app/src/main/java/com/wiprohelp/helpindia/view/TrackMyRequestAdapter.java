@@ -39,6 +39,7 @@ public class TrackMyRequestAdapter extends RecyclerView.Adapter<TrackMyRequestAd
         public RelativeLayout middleBar;
         public RelativeLayout lowerBar;
         public LinearLayout responseAwaitedLayout;
+        public View separator2;
         public ViewHolder(View v) {
             super(v);
             mRequestCategory = (TextView) v.findViewById(R.id.cell_track_request_cat_name);
@@ -50,6 +51,7 @@ public class TrackMyRequestAdapter extends RecyclerView.Adapter<TrackMyRequestAd
             middleBar = (RelativeLayout) v.findViewById(R.id.middle_bar);
             lowerBar = (RelativeLayout) v.findViewById(R.id.lower_bar);
             responseAwaitedLayout = (LinearLayout) v.findViewById(R.id.response_awaited_layout);
+            separator2 = v.findViewById(R.id.separator2);
             v.setOnClickListener(this);
         }
 
@@ -104,11 +106,13 @@ public class TrackMyRequestAdapter extends RecyclerView.Adapter<TrackMyRequestAd
         h.middleBar.setVisibility(View.GONE);
         h.lowerBar.setVisibility(View.GONE);
         h.responseAwaitedLayout.setVisibility(View.VISIBLE);
+        h.separator2.setVisibility(View.GONE);
     }
 
     private void setAwaitedLayout(ViewHolder h){
         h.middleBar.setVisibility(View.VISIBLE);
         h.lowerBar.setVisibility(View.VISIBLE);
         h.responseAwaitedLayout.setVisibility(View.GONE);
+        h.separator2.setVisibility(View.VISIBLE);
     }
 }

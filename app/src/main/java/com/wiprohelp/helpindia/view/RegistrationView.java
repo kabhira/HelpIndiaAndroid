@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
@@ -23,21 +24,15 @@ import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlaceAutocomplete;
-import com.squareup.otto.Subscribe;
-import com.wiprohelp.helpindia.Network.VolleyNetwork;
 import com.wiprohelp.helpindia.R;
-import com.wiprohelp.helpindia.Requests.LoadVolunteerProfileOperation;
-import com.wiprohelp.helpindia.Requests.TrackRequestOperation;
-import com.wiprohelp.helpindia.model.TrackRequestArray;
 import com.wiprohelp.helpindia.utilities.Constants;
 import com.wiprohelp.helpindia.utilities.CustomAlertDialog;
 import com.wiprohelp.helpindia.utilities.HelpIndiaSharedPref;
-import com.wiprohelp.helpindia.utilities.NetworkCheckBaseActivity;
 import com.wiprohelp.helpindia.utilities.SelectOptionAlert;
 
 import java.util.ArrayList;
 
-public class RegistrationView extends NetworkCheckBaseActivity implements View.OnClickListener, SelectOptionAlert.MultiSelectListener {
+public class RegistrationView extends AppCompatActivity implements View.OnClickListener, SelectOptionAlert.MultiSelectListener {
 
     private static final String TAG = "RegistrationView";
     private static final int PLACE_AUTOCOMPLETE_REQUEST_CODE = 1;
@@ -121,6 +116,7 @@ public class RegistrationView extends NetworkCheckBaseActivity implements View.O
         alreadyRegisteredEditProfile.setOnClickListener(this);
         alreadyRegisteredActionButton.setOnClickListener(this);
         alreadyRegisteredNewVolunteer.setOnClickListener(this);
+        customAlertDialog = new CustomAlertDialog(this);
 
         HelpIndiaSharedPref helpIndiaSharedPref = new HelpIndiaSharedPref(this);
         String volunteerMobile = helpIndiaSharedPref.getVolunteerMobile();
@@ -132,6 +128,12 @@ public class RegistrationView extends NetworkCheckBaseActivity implements View.O
             alreadyRegisteredLayout.setVisibility(View.VISIBLE);
             alreadyRegisteredLayoutTextView.setText(getResources().getString(R.string.already_registered_title_string)+" "+volunteerMobile);
         }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        customAlertDialog.dismissProgressDialog();
     }
 
     private class DrawerItemClickListener implements ListView.OnItemClickListener {
@@ -200,7 +202,7 @@ public class RegistrationView extends NetworkCheckBaseActivity implements View.O
         switch (v.getId()){
             case R.id.registration_location_button:
                 try {
-                    Intent autocompleteIntent = new PlaceAutocomplete.IntentBuilder(PlaceAutocomplete.MODE_FULLSCREEN).build(this);
+                    Intent autocompleteIntent = new PlaceAutocomplete.IntentBuilder(PlaceAutocomplete.MODE_OVERLAY).build(this);
                     startActivityForResult(autocompleteIntent, PLACE_AUTOCOMPLETE_REQUEST_CODE);
                 } catch (GooglePlayServicesRepairableException e) {
                     Log.e(TAG, e.getMessage());}
@@ -247,6 +249,7 @@ public class RegistrationView extends NetworkCheckBaseActivity implements View.O
                 break;
             case R.id.registration_action_button:
                 Intent intent = new Intent(this, ContactDetailView.class);
+                customAlertDialog.createProgressDialog("Please Wait");
                 intent.putExtra(Constants.VOLUNTEER_REGISTRATION_ADDRESS, selectedAddress);
                 intent.putExtra(Constants.VOLUNTEER_REGISTRATION_DAYS_AVAILABLE, registrationDayButton.getText());
                 intent.putExtra(Constants.VOLUNTEER_REGISTRATION_TIME_AVAILABLE, registrationTimmingButton.getText());
